@@ -5,10 +5,21 @@ const buttonDecrement = document.querySelector(
   "button[data-action='decrement']"
 );
 const actualValue = document.querySelector("#value");
+let count = 0
 
-// buttonIncrement.addEventListener('click', onButtonIncrement);
+
+function updateCount() {
+  actualValue.textContent = count;
+}
+buttonIncrement.addEventListener('click', onButtonIncrement);
 buttonDecrement.addEventListener('click', onButtonDecrement);
 
 function onButtonDecrement() {
-    console.log('Click!!!')
+    count -= 1;
+    updateCount();
+}
+
+function onButtonIncrement() {
+  count += 1;
+  updateCount();
 }
